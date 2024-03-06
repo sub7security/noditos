@@ -35,24 +35,24 @@ services:
       - "9901:8080"
     restart: unless-stopped
 
-#  ethereum-metrics-exporter:
-#    restart: "unless-stopped"
-#    image: ethpandaops/ethereum-metrics-exporter:latest
-#    command:
-#      - '--consensus-url=http://consensus:5052'
-#      - '--execution-url=http://execution:8545'
-#    ports:
-#      - "9902:9090"
-#    networks:
-#      - eth-docker_default
+  ethereum-metrics-exporter:
+    restart: "unless-stopped"
+    image: ethpandaops/ethereum-metrics-exporter:latest
+    command:
+      - '--consensus-url=http://consensus:5052'
+      - '--execution-url=http://execution:8545'
+    ports:
+      - "9902:9090"
+    networks:
+      - eth-docker_default
 
 volumes:
   node_exporter_data: {}
   cadvisor_data: {}
 
-#networks:
-#  eth-docker_default:
-#    external: true
+networks:
+  eth-docker_default:
+    external: true
 EOF
 
 # Run docker compose
