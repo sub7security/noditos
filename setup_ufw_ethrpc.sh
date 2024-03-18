@@ -18,8 +18,10 @@ ufw allow 9000
 ufw allow from 100.0.0.0/8
 
 # Allow VPSs to access the RPCs
-ufw allow from 149.50.135.15 to any port 443
-ufw allow from 158.69.121.222 to any port 443
+ufw allow from 213.199.57.24 to any port 443 #AXVPS
+ufw allow from 158.69.121.222 to any port 443 #PROXMOX
+ufw allow from 38.54.45.59 to any port 443 #lido-obol
+ufw allow from 154.205.154.94 to any port 443 #threshold
 
 # Specific port rules for denying
 ufw deny 8545
