@@ -22,6 +22,7 @@ ufw allow from 213.199.57.24 to any port 443 #AXVPS
 ufw allow from 167.235.116.175 to any port 443 #PROXMOX
 ufw allow from 38.54.45.59 to any port 443 #lido-obol
 ufw allow from 154.205.154.94 to any port 443 #threshold
+ufw allow from 200.58.108.230 to any port 443 #DonProx
 
 # Specific port rules for denying
 ufw deny 8545
