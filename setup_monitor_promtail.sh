@@ -63,7 +63,7 @@ positions:
   filename: /tmp/positions.yaml
 
 clients:
-  - url: http://10.10.20.101:3100/loki/api/v1/push
+  - url: http://10.10.20.111:3100/loki/api/v1/push
 
 scrape_configs:
   - job_name: system
@@ -86,6 +86,8 @@ scrape_configs:
         target_label: container_id
       - source_labels: [__meta_docker_container_label_com_docker_compose_service]
         target_label: compose_service
+      - source_labels: [__hostname__]
+        target_label: server
 
 EOF
 
